@@ -13,13 +13,13 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage
 
 
 #openai key
-openai.api_key ='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'
+openai.api_key =os.getenv("OPENAI_API_KEY")
 
 app = Flask(__name__)
 
 # Line Bot 設定
-line_bot_api = LineBotApi('Q42BbRkzfPFHJKmsNEgbty3OGnIxC+CLQo5kRmqGeIi50QTztLiCL5B/Cqr3CD0ICUjyjRWNV/4uqOtiDcc3OpSXP2FNdF4L/y1mtdd3rm50DOj7ZvF/Kd2yMbDUpGJlqHIIeW0q8aB8rRZcF24NVAdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('5a6463c8024e79a823b62eb8e54c5920') 
+line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS"))
+handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET")) 
 
 # 設定BMI的相關變數
 user_bmi = {}

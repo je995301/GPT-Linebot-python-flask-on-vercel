@@ -13,7 +13,7 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage
 
 
 #openai key
-openai.api_key ='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'
+openai.api_key ='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'
 
 app = Flask(__name__)
 
